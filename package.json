@@ -1,0 +1,7 @@
+{
+    "name": "aes",
+    "private": true,
+    "bin": {
+        "aes": "./aes.js"
+    }
+}
