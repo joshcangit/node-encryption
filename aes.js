@@ -17,9 +17,11 @@ if (mode === '--help' || mode === '-h' || mode === 'help' || !mode) {
 `);
 }
 
-password(mode, ({ password1, password2 }) => {
-  if (password2 === null) {
-    decrypt({ file, password });
+console.log(mode, file);
+
+mode && password(mode, ({ password1, password2 }) => {
+  if (mode === 'decrypt') {
+    decrypt({ file, password: password1 });
     return;
   }
   
@@ -31,6 +33,6 @@ password(mode, ({ password1, password2 }) => {
   }
 
   if (mode === 'encrypt') {
-    encrypt({ file, password2 });
+    encrypt({ file, password: password2 });
   }
 });
