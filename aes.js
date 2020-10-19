@@ -17,10 +17,12 @@ if (mode === '--help' || mode === '-h' || mode === 'help' || !mode) {
 `);
 }
 
-const shouldEncrypt = mode === 'encrypt';
-const shouldDecrypt = mode === 'decrypt';
-
-password(({ password1, password2 }) => {
+password(mode, ({ password1, password2 }) => {
+  if (password2 === null) {
+    decrypt({ file, password });
+    return;
+  }
+  
   if (password1 !== password2) {
     console.log('Passwords do not match!');
     return;
@@ -28,13 +30,7 @@ password(({ password1, password2 }) => {
     console.log('Passwords matched.');
   }
 
-  const password = password1;
-
-  if (shouldEncrypt) {
-    encrypt({ file, password });
-  }
-
-  if (shouldDecrypt) {
-    decrypt({ file, password });
+  if (mode === 'encrypt') {
+    encrypt({ file, password2 });
   }
 });

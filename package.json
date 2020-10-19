@@ -1,7 +1,8 @@
 {
-    "name": "aes",
-    "private": true,
-    "bin": {
-        "aes": "./aes.js"
-    }
+  "name": "aes-cli",
+  "author": "F1LT3R",
+  "version": "1.2.0",
+  "bin": {
+    "aes": "./aes.js"
+  }
 }

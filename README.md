@@ -1,6 +1,6 @@
-![Node Encryption CLI Screenshot](Node-Encryption-CLI-Screenshot.jpg)
+![AES CLI Screenshot](Node-Encryption-CLI-Screenshot.jpg)
 
-# Node Encryption
+# AES CLI
 
 An example of how one might encrypt/decrypt files using node.
 
