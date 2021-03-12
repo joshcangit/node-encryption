@@ -53,6 +53,9 @@ mode && password(mode, ({ password1, password2 }) => {
   }
 
   if (mode === 'encrypt') {
-    encrypt({ file, password: password2 });
+    if(!password2) {
+      console.error('Password required to encrypt');
+      process.exit(1);
+    } else encrypt({ file, password: password2 });
   }
 });
