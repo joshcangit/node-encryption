@@ -18,6 +18,13 @@ This code is adapted from the original. The original repo can be found here: htt
 - Add linting inputs and vscode settings. - [F1LT3R](https://f1lt3r.io)
 - Add password, and password verification input. - [F1LT3R](https://f1lt3r.io)
 
+#### Changes
+
+- Use `scrypt` with salt instead of SHA256 hash.
+- Changed algorithm to AES-256-GCM.
+- Prompt is muted without rewrite.
+- Do not allow blank password.
+
 ## Installation
 
 ```shell
@@ -37,5 +44,5 @@ npm install
 
 1. From your shell: `aes decrypt test.txt`
 2. You will be prompted for a password, and password verification.
-3. You will now see `test.txt.unenc`. This file will be identical to the original.
+3. You will now see `test-decrypt.txt`. This file will be identical to the original.
 4. You can rename this file back to `test.txt`.
